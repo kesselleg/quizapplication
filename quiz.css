@@ -9,14 +9,13 @@ body{
 .quizcontainer{
     background-color: white;
     border-radius: 8%;
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
     align-items: center;
     justify-content: center;
 
 }
-h2{
-    align-items: center;
-}
+
 ul li{
     overflow: hidden;
     padding: 5px;
@@ -29,7 +28,7 @@ ul label{
     font-family:Helvetica;
     
     align-items: center;
-    padding: 4rem;
+    padding: 2rem;
 }
 
 input type{
