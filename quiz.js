@@ -1,41 +1,41 @@
 const quizlist=[
     {
-        question:"what is the difference between flutter and Kotlin",
-        a:"xkfjlsjflsjfs",
-        b:"xkfjlsjflsjfs",
-        c:"xkfjlsjflsjfs",
-        d:"xkfjlsjflsjfs",
+        question:"what is the CSS in full words",
+        a:"cascading sheet sytle",
+        b:"sheet style cascading",
+        c:"style sheet cascading",
+        d:"Cascading style sheet",
         correct:"d",
 
 
     },
     {
-        question:"what is the similarity between flutter and Kotlin",
-        a:"xkfjlsjflsjfs",
-        b:"xkfjlsjflsjfs",
-        c:"xkfjlsjflsjfs",
-        d:"xkfjlsjflsjfs",
-        correct:"d",
+        question:"what is the largest animall in the world",
+        a:"Elephant",
+        b:"Girafe",
+        c:"Monkey",
+        d:"Mouse",
+        correct:"b",
 
 
     },
     {
-        question:"what is the difference between flutter and Kotlin",
-        a:"xkfjlsjflsjfs",
-        b:"xkfjlsjflsjfs",
-        c:"xkfjlsjflsjfs",
-        d:"xkfjlsjflsjfs",
-        correct:"d",
+        question:"what is the type of animal is the Lion",
+        a:"Herbivore ",
+        b:"Omnivore",
+        c:" Carnivore",
+        d:"All of them",
+        correct:"c",
 
 
     },
     {
-        question:"what is the difference between flutter and Kotlin",
-        a:"xkfjlsjflsjfs",
-        b:"xkfjlsjflsjfs",
-        c:"xkfjlsjflsjfs",
-        d:"xkfjlsjflsjfs",
-        correct:"d",
+        question:"what is the Capital city of Russia",
+        a:"Moscou",
+        b:"Madagascar",
+        c:"Quebec",
+        d:"Kigali",
+        correct:"a",
 
 
     },
@@ -96,7 +96,7 @@ submitbtn.addEventListener('click', ()=>{
             loadquiz()
         }else
         {
-            quiz.innerHTML=`you answeres ${score}/${quizlist.length}`
+            quiz.innerHTML=`<h2>you answered :</h2> ${score}/${quizlist.length}`
         }
     }
 })
