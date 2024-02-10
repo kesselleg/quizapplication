@@ -90,6 +90,11 @@ submitbtn.addEventListener('click', ()=>{
     if(anser){
         if(anser === quizlist[newquiz].correct){
             score++
+            showFeedback("Correct!");
+        }
+        else{
+            showFeedback("Incorrect!");
+            
         }
         newquiz++
         if(newquiz < quizlist.length){
@@ -100,3 +105,13 @@ submitbtn.addEventListener('click', ()=>{
         }
     }
 })
+
+function showFeedback(message) {
+    const feedbackElement = document.createElement('p');
+    feedbackElement.textContent = message;
+    feedbackElement.classList.add('feedback');
+    quiz.appendChild(feedbackElement);
+    setTimeout(() => {
+        feedbackElement.remove();
+    }, 2000); // Remove feedback after 2 seconds
+}
