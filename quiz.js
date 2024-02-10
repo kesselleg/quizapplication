@@ -1,6 +1,6 @@
 const quizlist=[
     {
-        quizname:"what is the difference between flutter and Kotlin",
+        question:"what is the difference between flutter and Kotlin",
         a:"xkfjlsjflsjfs",
         b:"xkfjlsjflsjfs",
         c:"xkfjlsjflsjfs",
@@ -10,7 +10,7 @@ const quizlist=[
 
     },
     {
-        quizname:"what is the difference between flutter and Kotlin",
+        question:"what is the similarity between flutter and Kotlin",
         a:"xkfjlsjflsjfs",
         b:"xkfjlsjflsjfs",
         c:"xkfjlsjflsjfs",
@@ -20,7 +20,7 @@ const quizlist=[
 
     },
     {
-        quizname:"what is the difference between flutter and Kotlin",
+        question:"what is the difference between flutter and Kotlin",
         a:"xkfjlsjflsjfs",
         b:"xkfjlsjflsjfs",
         c:"xkfjlsjflsjfs",
@@ -30,7 +30,7 @@ const quizlist=[
 
     },
     {
-        quizname:"what is the difference between flutter and Kotlin",
+        question:"what is the difference between flutter and Kotlin",
         a:"xkfjlsjflsjfs",
         b:"xkfjlsjflsjfs",
         c:"xkfjlsjflsjfs",
@@ -39,63 +39,64 @@ const quizlist=[
 
 
     },
-]
+];
 
 
-const quiz=document.getElementById("quiz")
-const questions=document.getElementById("question")
-const answers=document.getElementById("answer")
-const a=document.getElementById("a_text")
-const b=document.getElementById("btext")
-const c=document.getElementById("c_text")
-const d=document.getElementById("d_text")
-const submit=document.getElementById("submit")
+const quiz=document.getElementById('quiz')
+const questionels=document.getElementById('question')
+const answerels=document.querySelectorAll('.answer')
+const a_text=document.getElementById('a_text')
+const b_text=document.getElementById('b_text')
+const c_text=document.getElementById('c_text')
+const d_text=document.getElementById('d_text')
+const submitbtn=document.getElementById('submit')
 
 let newquiz=0
 let score=0
+loadquiz()
 
 function loadquiz(){
     selectanswers()
 
 
     const newquizdata=quizlist[newquiz]
-    questionel.innerText = newquizdata.question
-    a_text.innerText=newquiz.a
-    b_text.innerText=newquiz.b
-    c_text.innerText=newquiz.c
-    d_text.innerText=newquiz.d
+    questionels.innerHTML = newquizdata.question
+    a_text.innerHTML=newquizdata.a
+    b_text.innerHTML=newquizdata.b
+    c_text.innerHTML=newquizdata.c
+    d_text.innerHTML=newquizdata.d
     
 
 }
 
 function selectanswers(){
-    answers.forEach(answers =>answers.checked=false) 
+    answerels.forEach(answerels =>answerels.checked=false) 
         
     
 }
 
 function getanswers(){
-    let answers
-    answers.forEach(answers=>{
-        if(answers.checked){
-            answer=answers.id
+    let answe
+    answerels.forEach(answerel=>{
+        if(answerel.checked){
+            answe=answerel.id
         }
     })
-    return answer
+    return answe
 }
 
-submit.addEventListener('click', ()=>{
+submitbtn.addEventListener('click', ()=>{
     const anser=getanswers()
     if(anser){
         if(anser === quizlist[newquiz].correct){
             score++
         }
         newquiz++
-        if(newquiz < newquiz.length){
+        if(newquiz < quizlist.length){
             loadquiz()
         }else
         {
-            quiz.innerHTML=`you answeres ${score}/${newquiz.length}`
+            quiz.innerHTML=`you answeres ${score}/${quizlist.length}`
         }
     }
 })
